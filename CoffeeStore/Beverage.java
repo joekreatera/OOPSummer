@@ -41,7 +41,7 @@ public class Beverage{
     setBase(b);
     setCost(c);
     setPrice(p);
-    setProductKey(p);
+    setProductKey(pk);
     setSyrup(y);
     setTopping(o);
   }
