@@ -12,6 +12,18 @@ public class Catalogue{
 
   }
 
+  public Beverage getBeverage(int opt){
+
+    return baseBeverages[opt];
+
+  }
+  public Beverage getRandomBeverage(){
+
+    int r = (int)(Math.random()*4);
+    return baseBeverages[r];
+
+  }
+
   @Override
   public String toString(){
     String beveragesStr = "";

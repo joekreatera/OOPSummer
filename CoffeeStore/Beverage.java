@@ -69,4 +69,9 @@ public class Beverage{
 
   public int getTopping(){ return topping;}
   public void setTopping(int s){ topping = s;}
+
+  @Override
+  public String toString(){
+    return  productKey + ":("+cost+") p:"+price+" s:"+size+" t:"+type; 
+  }
 }
