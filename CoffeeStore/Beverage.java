@@ -1,5 +1,19 @@
 public class Beverage{
 
+  public static final int SMALL = 1;
+  public static final int LARGE = 2;
+  public static final int COLD = 1;
+  public static final int HOT = 2;
+  public static final int COFFEE = 1;
+  public static final int TEA = 2;
+  public static final int NONE = 0;
+  public static final int STRAWBERRY = 1;
+  public static final int BERRY = 2;
+  public static final int MANGO = 3;
+  public static final int LEMON = 4;
+  public static final int WHIPPED_CREAM = 1;
+  public static final int SPARKS = 2;
+
   /*
   size: {sm:1, lg:2} small, large
   type: {c:1, h:2} cold, hot
@@ -7,8 +21,8 @@ public class Beverage{
   cost: float, non-negative numbers  > 0
   price: float, non-negative numbers > 0
   productKey: String, TBD
-  syrup: {s:1,b:2,m:3,l:4} strawberry, berry, mango, lemon
-  topping: {wc:1, sp:2} whipped cream, sparks
+  syrup: {n:0 , s:1,b:2,m:3,l:4} none, strawberry, berry, mango, lemon
+  topping: {n:0 ,wc:1, sp:2} none, whipped cream, sparks
   */
 
   private int size;
@@ -19,6 +33,18 @@ public class Beverage{
   private String productKey;
   private int syrup;
   private int topping;
+
+
+  public Beverage(int s, int t, int b, float c, float p, String pk, int y, int o){
+    setSize(s);
+    setType(t);
+    setBase(b);
+    setCost(c);
+    setPrice(p);
+    setProductKey(p);
+    setSyrup(y);
+    setTopping(o);
+  }
 
   public int getSize(){ return size;}
   public void setSize(int s){ size = s;}
