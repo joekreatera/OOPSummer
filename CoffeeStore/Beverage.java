@@ -1,5 +1,16 @@
 public class Beverage{
 
+  /*
+  size: {sm:1, lg:2} small, large
+  type: {c:1, h:2} cold, hot
+  base: {c:1, t:2} coffee, tea
+  cost: float, non-negative numbers  > 0
+  price: float, non-negative numbers > 0
+  productKey: String, TBD
+  syrup: {s:1,b:2,m:3,l:4} strawberry, berry, mango, lemon
+  topping: {wc:1, sp:2} whipped cream, sparks
+  */
+
   private int size;
   private int type;
   private int base;
