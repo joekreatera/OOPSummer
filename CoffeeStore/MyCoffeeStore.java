@@ -10,7 +10,7 @@ public class MyCoffeeStore{
   public static void main(String args[]){
 
       MyCoffeeStore store = new MyCoffeeStore();
-      System.out.println( store.getCatalogue() );
+      System.out.println( store.getCatalogue()  );
 
   }
 

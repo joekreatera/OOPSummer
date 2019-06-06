@@ -12,4 +12,13 @@ public class Catalogue{
 
   }
 
+  @Override
+  public String toString(){
+    String beveragesStr = "";
+    for( int i =0 ; i < baseBeverages.length ; i++){
+      beveragesStr += "\n" + baseBeverages[i];
+    }
+    return "Impresion de catalogo: " + beveragesStr ;
+  }
+
 }
