@@ -28,9 +28,18 @@ class Payment{
   public float getAmountGiven(){ return amountGiven; }
   public float getAmountReturned(){ return amountReturned;}
   public void calculateAmountReturned(){
-// fill this
-      amountReturned = amountGiven - order.getPrice();
+      if( paymentType == Payment.CARD){
+          amountReturned = 0;
+      }else{
+          amountReturned = amountGiven - order.getPrice();
+      }
 //TODO: [fix] we will suppose all payments are enough to cover the whole amount
+  }
+  @Override
+  public String toString(){
+    return order + " sold by " + whoSold
+    + " must return " + amountReturned
+    + " (paid with " + paymentType + ")";
   }
 
 }

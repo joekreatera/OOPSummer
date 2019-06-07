@@ -48,6 +48,10 @@ class Employee{
     charge = v;
   }
 
+  @Override
+  public String toString(){
+      return "("+id+")" + name + " " + lastName;
+  }
 
 
 }
