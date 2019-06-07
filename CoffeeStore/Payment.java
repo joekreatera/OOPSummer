@@ -37,9 +37,10 @@ class Payment{
   }
   @Override
   public String toString(){
+    String pt = (paymentType==Payment.CARD?"CARD":"CASH");
     return order + " sold by " + whoSold
     + " must return " + amountReturned
-    + " (paid with " + paymentType + ")";
+    + " (paid with " + pt + ")";
   }
 
 }
