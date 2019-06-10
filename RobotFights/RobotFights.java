@@ -13,7 +13,26 @@ class RobotFights{
   }
   public static void main(String args[]){
     System.out.println("Let's get ready to rumble");
-    RobotFights mainEvent = new RobotFights( new Robot() , new Robot());
+    Robot joe = new Robot(0,0,100,4,3);
+    Robot chucho = new Robot(10,10,300,2,2);
+
+    joe.setAttackSlots(4);
+    chucho.setAttackSlots(3);
+    joe.setDefenseSlots(2);
+    chucho.setDefenseSlots(4);
+
+    joe.addAttack( new Weapon() );joe.addAttack( new Weapon() );
+    joe.addAttack( new Weapon() );joe.addAttack( new Weapon() );
+
+    chucho.addAttack( new Weapon() ); chucho.addAttack( new Weapon() );
+    chucho.addAttack( new Weapon() );
+
+    joe.addDefense(new Defense()); joe.addDefense(new Defense());
+
+    chucho.addDefense(new Defense()); chucho.addDefense(new Defense());
+    chucho.addDefense(new Defense()); chucho.addDefense(new Defense());
+
+    RobotFights mainEvent = new RobotFights( chucho, joe);
     mainEvent.fight();
   }
 }
