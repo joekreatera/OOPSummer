@@ -62,8 +62,8 @@ public class Robot{
       int cx = r.getPosX() - this.getPosX();
       int cy = r.getPosY() - this.getPosY();
 
-      int dirX = cx > 0 ?1:-1;
-      int dirY = cy > 0 ?1:-1;
+      int dirX = cx >= 0 ?1:-1;
+      int dirY = cy >= 0 ?1:-1;
 
       cx = Math.abs(cx)>getSpeedX()?getSpeedX()*dirX:cx;
       cy = Math.abs(cy)>getSpeedY()?getSpeedY()*dirY:cy;

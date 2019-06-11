@@ -25,8 +25,8 @@ class RobotFights{
   }
   public static void main(String args[]){
     System.out.println("Let's get ready to rumble");
-    Robot joe = new J03(0,0);
-    Robot chucho = new CH4CH0(10,10);
+    Robot joe = new J03(100,100);
+    Robot chucho = new CH4CH0(-50,-80);
     RobotFights mainEvent = new RobotFights( chucho, joe);
     mainEvent.fight();
   }
