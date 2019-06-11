@@ -4,12 +4,12 @@ public class CH4CH0 extends Robot{
     super(ox, oy,300,2,2);
     this.setAttackSlots(3);
     this.setDefenseSlots(4);
-    this.addAttack( new Weapon() );
-    this.addAttack( new Weapon() );
-    this.addAttack( new Weapon() );
-    this.addDefense(new Defense());
-    this.addDefense(new Defense());
-    this.addDefense(new Defense());
-    this.addDefense(new Defense());
+    this.addAttack( new ClashWeapon(5) );
+    this.addAttack( new ElectricalWeapon(10) );
+    this.addAttack( new FireWeapon(4) );
+    this.addDefense(new ElectricalDefense(5));
+    this.addDefense(new FireDefense(7));
+    this.addDefense(new ClashDefense(6));
+    this.addDefense(new ClashDefense(4));
   }
 }
