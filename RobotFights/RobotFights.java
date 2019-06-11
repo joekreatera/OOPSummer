@@ -8,6 +8,18 @@ class RobotFights{
   public void fight(){
       System.out.println("Start!");
       System.out.println("------ \n" + robotChampion + " \n\t\t\tvs\n" + robotContender);
+
+      System.out.println( robotChampion.printPos()
+                          + " <-> " +
+                          robotContender.printPos() );
+      for(int i = 0; i < 5; i++){
+          robotChampion.moveTowards(robotContender);
+          robotContender.moveTowards(robotChampion);
+          System.out.println( robotChampion.printPos()
+                              + " <-> " +
+                              robotContender.printPos() );
+      }
+
       System.out.println("------");
       System.out.println("End");
   }

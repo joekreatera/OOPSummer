@@ -11,5 +11,20 @@ public class J03 extends Robot{
       this.addDefense(new ElectricalDefense(9));
       this.addDefense(new ClashDefense(4));
   }
+  @Override
+  public String toString(){
+      String robot="       _\n";
+      robot+="      [ ]\n";
+      robot+="     (   )\n";
+      robot+="      |>|\n";
+      robot+="   __/===\\__\n";
+      robot+="  //| o=o |\\\\\n";
+      robot+="<]  | o=o |  [>\n";
+      robot+="    \\=====/\n";
+      robot+="   / / | \\ \\\n";
+      robot+="  <_________>\n";
+
+      return  robot + "\n"  + super.toString() ;
+  }
 
 }

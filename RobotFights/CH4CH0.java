@@ -12,4 +12,24 @@ public class CH4CH0 extends Robot{
     this.addDefense(new ClashDefense(6));
     this.addDefense(new ClashDefense(4));
   }
+
+  @Override
+  public String toString(){
+      String robot = "";
+      robot+="   __,_,\n";
+      robot+="  [_|_/\n";
+      robot+="   //\n";
+      robot+=" _//    __\n";
+      robot+="(_|)   |@@|\n";
+      robot+=" \\ \\__ \\--/ __\n";
+      robot+="  \\o__|----|  |   __\n";
+      robot+="      \\ }{ /\\ )_ / _\\\n";
+      robot+="      /\\__/\\ \\__O (__\n";
+      robot+="     (--/\\--)    \\__/\n";
+      robot+="     _)(  )(_\n";
+      robot+="    `---''---`\n";
+
+      return  robot + "\n"  + super.toString() ;
+
+  }
 }

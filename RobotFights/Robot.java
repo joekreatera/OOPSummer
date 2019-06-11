@@ -27,6 +27,13 @@ public class Robot{
     damage = 0;
   }
 
+  public int getPosX(){ return posX;}
+  public int getPosY(){return posY;}
+  public void setPosX(int x){posX = x;}
+  public void setPosY(int y){posY = y;}
+  public int getSpeedX(){ return speedX;}
+  public int getSpeedY(){ return speedY;}
+
   public void setAttackSlots(int s){
     attacks = new Weapon[s];
   }
@@ -51,6 +58,25 @@ public class Robot{
     }
   }
 
+  public void moveTowards(Robot r){
+      int cx = r.getPosX() - this.getPosX();
+      int cy = r.getPosY() - this.getPosY();
+
+      int dirX = cx > 0 ?1:-1;
+      int dirY = cy > 0 ?1:-1;
+
+      cx = Math.abs(cx)>getSpeedX()?getSpeedX()*dirX:cx;
+      cy = Math.abs(cy)>getSpeedY()?getSpeedY()*dirY:cy;
+
+      this.setPosX( this.getPosX() + cx);
+      this.setPosY( this.getPosY() + cy);
+
+  }
+
+  public String printPos(){
+      return "R("+getPosX()+","+getPosY()+")";
+  }
+
   @Override
   public String toString(){
     String defenseStr = "";
@@ -68,4 +94,5 @@ public class Robot{
     }
     return "Robot ("+posX+","+posY+" : "+speedX+","+speedY+") with "+damage+"/"+maxDamagePossible + "\n" + defenseStr + "\n" + attackStr;
   }
+
 }
