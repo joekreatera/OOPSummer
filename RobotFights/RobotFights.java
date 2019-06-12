@@ -61,6 +61,9 @@ class RobotFights{
               w = rB.getRandomAttack();
               d = rA.getRandomDefense();
               attackRobot(rB,rA,w,d);
+            }else{
+              // robotB should move away!!!
+              // yeah! you can make it!
             }
           }
 
@@ -72,7 +75,17 @@ class RobotFights{
   public boolean attackRobot(Robot attacker, Robot defender,
                               Weapon attack, Defense defense){
 
-    
+    if( attack.getStrength() > defense.getStrength() ){
+        defender.addDamage( RobotFightHelper.damageFromType(w,d));
+
+        if( attack.getType() == defense.getType()){
+          return true;
+        }else{
+          if(Math.random() > 0.5)
+            return true;
+        }
+
+    }
     return false;
   }
 
