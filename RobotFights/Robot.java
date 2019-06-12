@@ -27,12 +27,23 @@ public class Robot{
     damage = 0;
   }
 
+  public boolean isAvailable(){
+    return damage < maxDamagePossible;
+  }
+
   public int getPosX(){ return posX;}
   public int getPosY(){return posY;}
   public void setPosX(int x){posX = x;}
   public void setPosY(int y){posY = y;}
   public int getSpeedX(){ return speedX;}
   public int getSpeedY(){ return speedY;}
+
+  public Weapon getRandomAttack(){
+    return attacks[(int)Math.random()*(attacks.length-1)];
+  }
+  public Defense getRandomDefense(){
+    return defenses[(int)Math.random()*(defenses.length-1)];
+  }
 
   public void setAttackSlots(int s){
     attacks = new Weapon[s];
