@@ -42,6 +42,10 @@ public class Robot{
     damage += d;
   }
 
+  public String printDamage(){
+      return "R("+damage+" from " + maxDamagePossible+ ")";
+  }
+
   public Weapon getRandomAttack(){
     return attacks[(int)Math.random()*(attacks.length-1)];
   }

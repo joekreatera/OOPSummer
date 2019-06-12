@@ -65,6 +65,7 @@ class RobotFights{
               // robotB should move away!!!
               // yeah! you can make it!
             }
+            System.out.println(rA.printDamage() + "//"+ rB.printDamage() );
           }
 
       }
@@ -76,7 +77,7 @@ class RobotFights{
                               Weapon attack, Defense defense){
 
     if( attack.getStrength() > defense.getStrength() ){
-        defender.addDamage( RobotFightHelper.damageFromType(w,d));
+        defender.addDamage( RobotFightHelper.damageFromType(attack,defense));
 
         if( attack.getType() == defense.getType()){
           return true;
