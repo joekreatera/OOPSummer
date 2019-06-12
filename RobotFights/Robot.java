@@ -38,6 +38,10 @@ public class Robot{
   public int getSpeedX(){ return speedX;}
   public int getSpeedY(){ return speedY;}
 
+  public void addDamage(int d){
+    damage += d;
+  }
+
   public Weapon getRandomAttack(){
     return attacks[(int)Math.random()*(attacks.length-1)];
   }

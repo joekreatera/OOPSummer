@@ -71,6 +71,8 @@ class RobotFights{
 
   public boolean attackRobot(Robot attacker, Robot defender,
                               Weapon attack, Defense defense){
+
+    
     return false;
   }
 
