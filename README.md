@@ -7,7 +7,7 @@ ITESM Summer Object Oriented Programming Course
 - [x] Tank with liquid density :calendar:
 - [x] Spaceship :bomb:
 - [x] WebServerAndClient :bomb:
-- [ ] UML Robots :calendar:
+- [x] UML Robots :calendar:
 - [ ] Robot specification to File :calendar:
 - [ ] User and password look up in file to access :calendar:
 - [ ] TBD :bomb:
@@ -37,3 +37,4 @@ Check the updated exams, still missing coding the WebServerAndClient but [Spaces
 ## Update 12-06-19
 Updated exams from first week, check them out to see the implementation.
 [WebServerAndClient](https://github.com/joekreatera/OOPSummer/tree/master/Exam_WebServerAndClient)
+UML Diagram
