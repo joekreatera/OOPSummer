@@ -8,6 +8,26 @@ public class VideogameStore{
     this.dataFile = dataFile;
   }
 
+  /**
+  * Description: function to sellVIdeogame
+  * Requires: Long Id (Videogame Id on File)
+  */
+  public boolean sellVideogame(long id){
+    for( int i = 0; i < inventory.length ; i++){
+      if( inventory[i].getId() == id){
+          int s = inventory[i].getStock();
+          if( s <= 0){
+              return false;
+          }
+          s -= 1;
+          inventory[i].setStock(s);
+          // addPayment database
+          return true;
+      }
+    }
+    return false;
+  }
+
   public String getPrintedCatalogue(){
     String result = "id)\tName\t\t\t\tRating\t\t\tPrice\tStock\n";
     for(int i = 0 ; i<inventory.length ; i++){

@@ -21,16 +21,19 @@ public class VideogameStoreUI{
     return str;
   }
 
-  public void doSale(BufferedReader in){
+  public void doSale(BufferedReader in) throws IOException{
     int option = -1;
     while( option != 0){
       try{
         System.out.print("Videogame Id:)");
-        int id = Long.parseLong(in.readLine());
+        long id = Long.parseLong(in.readLine());
         // not implemented yet!!!
         boolean found = store.sellVideogame(id);
         if( !found ){
-          System.out.println("Videogame not found!!!");
+          System.out.println("Videogame not found // Or not enough units!!!");
+        }else{
+          store.saveDatabase();
+          System.out.println("Videogame sold!");
         }
         option = 0;
       }catch(NumberFormatException nfe){
