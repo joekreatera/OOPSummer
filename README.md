@@ -2,13 +2,16 @@
 ITESM Summer Object Oriented Programming Course
 
 # Projects and Challenges (marked down the ones included here with solution)
+- [x] Simple Human
+- [x] Robot Fights
+- [x] Videogame Store 
 - [x] Encryption :calendar:
 - [ ] Human Implementation (with fighting) :calendar:
 - [x] Tank with liquid density :calendar:
 - [x] Spaceship :bomb:
 - [x] WebServerAndClient :bomb:
 - [x] UML Robots :calendar:
-- [ ] Robot specification to File :calendar:
+- [x] Robot specification to File :calendar:
 - [ ] User and password look up in file to access :calendar:
 - [ ] TBD :bomb:
 - [ ] TBD :bomb:
@@ -38,5 +41,5 @@ Check the updated exams, still missing coding the WebServerAndClient but [Spaces
 Updated exams from first week, check them out to see the implementation.
 [WebServerAndClient](https://github.com/joekreatera/OOPSummer/tree/master/Exam_WebServerAndClient)
 
-Robot UML: 
+Robot UML:
 [UML Diagram](https://github.com/joekreatera/OOPSummer/blob/master/RobotFights/UMLRobotS.png)
