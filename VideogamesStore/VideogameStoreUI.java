@@ -38,6 +38,9 @@ public class VideogameStoreUI{
             System.out.println("Didn't catch your option!. Again.");
           }
 
+          if( option == 1){
+            System.out.println(store.getPrintedCatalogue());
+          }
           if( option == 4){
               doExit = true;
               in.close();

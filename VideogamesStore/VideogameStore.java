@@ -8,6 +8,14 @@ public class VideogameStore{
     this.dataFile = dataFile;
   }
 
+  public String getPrintedCatalogue(){
+    String result = "id)\tName\t\t\t\tRating\t\t\tPrice\tStock\n";
+    for(int i = 0 ; i<inventory.length ; i++){
+        result += inventory[i].getPrintView() + "\n";
+    }
+    return result;
+  }
+
   public void loadDatabase(){
     try{
       FileReader reader = new FileReader(dataFile);

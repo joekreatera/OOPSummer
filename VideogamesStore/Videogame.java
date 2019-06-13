@@ -35,4 +35,18 @@ public class Videogame{
       //Fifa 2000, M, 1200.00,4
     return id+","+name + "," + rating + ","+ price + "," + stock;
   }
+  public static String getFixedCharactersName(String name , int limit){
+      if(name.length() > limit){
+        return name.substring(0,limit);
+      }
+      String finalStr = name;
+      for(int i = name.length() ; i< limit; i++)
+        finalStr += " ";
+
+      return finalStr;
+  }
+  public String getPrintView(){
+    String thisName = Videogame.getFixedCharactersName(name,20);
+    return id+")\t"+thisName+"\t\t"+rating+"\t\t\t"+price+"\t" + stock;
+  }
 }
