@@ -4,6 +4,7 @@ ITESM Summer Object Oriented Programming Course
 # Projects and Challenges (marked down the ones included here with solution)
 - [x] Simple Human
 - [x] Robot Fights
+- [x] Coffee Store
 - [x] Videogame Store 
 - [x] Encryption :calendar:
 - [ ] Human Implementation (with fighting) :calendar:
