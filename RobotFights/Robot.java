@@ -96,6 +96,29 @@ public class Robot{
       return "R("+getPosX()+","+getPosY()+")";
   }
 
+  public String getSaveString(){
+
+    String defenseStr = "";
+    for( int i = 0; i< defenses.length ;i++){
+      if( defenses[i] != null){
+        defenseStr += defenses[i].getType() + ":" + defenses[i].getStrength() + ",";
+      }
+    }
+
+    String attackStr = "";
+    for( int i = 0; i< attacks.length ;i++){
+      if( attacks[i] != null){
+        attackStr += attacks[i].getType() + ":" + attacks[i].getStrength() + ",";
+      }
+    }
+    return posX+","+posY+","+speedX+","+speedY+","+maxDamagePossible+","
+          +defenses.length+","+attacks.length+","+
+          defenseStr+""+attackStr
+          ;
+
+
+  }
+
   @Override
   public String toString(){
     String defenseStr = "";

@@ -5,6 +5,9 @@ class RobotFights{
   public RobotFights(Robot champion, Robot contender){
       robotChampion = champion;
       robotContender = contender;
+
+      RobotFightHelper.saveDatabase("robots.txt",robotChampion,true);
+      RobotFightHelper.saveDatabase("robots.txt",robotContender,false);
   }
   public void fight(){
       System.out.println("Start!");
