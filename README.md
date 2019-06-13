@@ -37,4 +37,4 @@ Check the updated exams, still missing coding the WebServerAndClient but [Spaces
 ## Update 12-06-19
 Updated exams from first week, check them out to see the implementation.
 [WebServerAndClient](https://github.com/joekreatera/OOPSummer/tree/master/Exam_WebServerAndClient)
-UML Diagram
+[UML Diagram](https://github.com/joekreatera/OOPSummer/blob/master/RobotFights/UMLRobotS.png)
