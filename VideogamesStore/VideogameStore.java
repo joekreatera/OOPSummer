@@ -2,12 +2,13 @@ import java.io.*;
 
 public class VideogameStore{
   Videogame[] inventory;
-
+  String dataFile = "_default.vg";
   public VideogameStore(String dataFile){
     // initialize according to game database
+    this.dataFile = dataFile;
   }
 
-  public void loadDatabase(String dataFile){
+  public void loadDatabase(){
     try{
       FileReader reader = new FileReader(dataFile);
       BufferedReader database= new  BufferedReader(reader);
@@ -34,10 +35,10 @@ public class VideogameStore{
     }
   }
 
-  public void saveDatabase(String filename){
+  public void saveDatabase(){
       // please make backup before doing this!!!
       try{
-          FileWriter file = new FileWriter(filename);
+          FileWriter file = new FileWriter(dataFile);
           PrintWriter printer = new PrintWriter(file, true);
 
           for(int i = 0; i < inventory.length ;i++){
@@ -48,11 +49,6 @@ public class VideogameStore{
       }catch(IOException ioe){
         System.out.println("Exception " + ioe);
       }
-  }
-  public static void main(String args[]){
-    VideogameStore vs = new VideogameStore("db.vg");
-    vs.loadDatabase("db.vg");
-    vs.saveDatabase("db.vg");
   }
 
 }
