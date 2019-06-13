@@ -20,6 +20,25 @@ public class VideogameStoreUI{
     str += "------------------------------\n";
     return str;
   }
+
+  public void doSale(BufferedReader in){
+    int option = -1;
+    while( option != 0){
+      try{
+        System.out.print("Videogame Id:)");
+        int id = Long.parseLong(in.readLine());
+        // not implemented yet!!!
+        boolean found = store.sellVideogame(id);
+        if( !found ){
+          System.out.println("Videogame not found!!!");
+        }
+        option = 0;
+      }catch(NumberFormatException nfe){
+        System.out.println("That's not a valid Id.  (0) to return.");
+      }
+    }
+  }
+
   public void doUI(){
       boolean doExit = false;
       try{
@@ -40,6 +59,10 @@ public class VideogameStoreUI{
 
           if( option == 1){
             System.out.println(store.getPrintedCatalogue());
+          }
+          if(option == 2){
+            // ask for videogame id!!
+            doSale(in);
           }
           if( option == 4){
               doExit = true;
