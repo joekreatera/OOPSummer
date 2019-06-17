@@ -1,0 +1,12 @@
+q:q
+w:e
+r:t
+y:u
+i:u
+p:r
+q:c
+b:d
+n:m
+a:ads
+2:5
+qw:45
