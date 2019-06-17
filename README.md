@@ -84,4 +84,10 @@ Is important to note that when there is a horde, the move is going to be towards
 
 ## Update 17-06-2019
 
-Uploaded JInterface reference folder to check how UIs are created. 
+Uploaded JInterface reference folder to check how UIs are created.
+Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_event_listeners.htm)
+
+### Added links, tools and examples
+[UI1: extension](JInterface/WindowExample.java)
+[UI2: creation](JInterface/WindowMaker.java)
+[UI3: auxiliary Canvas](JInterface/MyCanvas.java)
