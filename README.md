@@ -88,6 +88,6 @@ Uploaded JInterface reference folder to check how UIs are created.
 Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_event_listeners.htm)
 
 ### Added links, tools and examples
-[UI1: extension](./JInterface/WindowExample.java)
-[UI2: creation](./JInterface/WindowMaker.java)
+[UI1: extension](../../JInterface/WindowExample.java)
+[UI2: creation](/JInterface/WindowMaker.java)
 [UI3: auxiliary Canvas](./JInterface/MyCanvas.java)
