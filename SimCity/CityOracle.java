@@ -7,10 +7,27 @@ class CityOracle{
   City city;
 
   public CityOracle(){
-    writer = new PrintWriter(new OutputStreamWriter(System.out) , true );
-    reader = new BufferedReader(new InputStreamReader(System.in) );
-    city = new City();
-    city.readFile("default.city");
+
+    try{
+      writer = new PrintWriter(new OutputStreamWriter(System.out) , true );
+      reader = new BufferedReader(new InputStreamReader(System.in) );
+      city = new City();
+      try{
+        city.readFile("default.city");
+      }catch(Exception c){
+        writer.println("Could not read file");
+      }
+    }catch(Exception e){
+      System.out.println("Problem " + e);
+    }
+  }
+
+  public void showReport() {
+      try{
+        writer.println(city.getReport());
+      }catch(Exception e){
+        System.out.println("Problem with report output");
+      }
   }
 
   public int doMenu(){
@@ -20,6 +37,7 @@ class CityOracle{
     writer.println("3) Load new city");
     writer.println("4) General Report");
     writer.println("5) Error Report");
+    writer.println("6) Print city");
 
     writer.print("Selection:"); writer.flush();
     try{
@@ -27,8 +45,19 @@ class CityOracle{
     }catch(Exception e){
       return -1;
     }
+  }
 
+  public void inputNewFile(){
 
+    try{
+      String newFile = (reader.readLine());
+      city.cleanse();
+      city = new City();
+      city.readFile(newFile);
+      writer.println("New city loaded! (" + newFile+")");
+    }catch(Exception e){
+      System.out.println(e);
+    }
   }
 
   public void doLoop() {
@@ -37,7 +66,23 @@ class CityOracle{
     while( option != 0){
       option = doMenu();
       if( option == 1){
-
+          writer.println("Total pollution " + city.getPollution() );
+      }
+      if( option == 2){
+          writer.println("Total population " + city.getPopulation() );
+      }
+      if( option == 3){
+          writer.print("New file "); writer.flush();
+          inputNewFile();
+      }
+      if( option == 4){
+          showReport();
+      }
+      if( option == 5){
+          writer.println("Errors on planning " + city.getErrors());
+      }
+      if( option == 6){
+          writer.println(city.getPrintedMap());
       }
 
     }
