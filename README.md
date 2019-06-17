@@ -80,3 +80,8 @@ The damage done by a creature to the other creature, unless they find a HEALER, 
 The game will end when there's no more creatures of one side.
 
 Is important to note that when there is a horde, the move is going to be towards the nearest single enemy. When a creature is not in a horde, it moves randomly changing its direction vector each 5 days or when it has found the world's end. If there are just hordes missing, they will follow the nearest one.
+
+
+## Update 17-06-2019
+
+Uploaded JInterface reference folder to check how UIs are created. 
