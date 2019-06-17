@@ -89,5 +89,7 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 
 ### Added links, tools and examples
 [UI1: extension](../../JInterface/WindowExample.java)
+
 [UI2: creation](../../JInterface/WindowMaker.java)
+
 [UI3: auxiliary Canvas](../../JInterface/MyCanvas.java)
