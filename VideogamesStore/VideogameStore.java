@@ -2,17 +2,33 @@ import java.io.*;
 
 public class VideogameStore{
   Videogame[] inventory;
+  Payment[] payments;
+  Offer[] offers;
   String dataFile = "_default.vg";
-  public VideogameStore(String dataFile){
+  String salesFile = "_sales.vg"
+  int lastPayment = 0;
+  int lastPaymentPrinted = 0;
+  public VideogameStore(String dataFile,String salesFile){
     // initialize according to game database
     this.dataFile = dataFile;
+    this.salesFile = salesFile;
+    // this should be implemented with another type of structure. for now, take a very big number (bad for memory)
+    payments[] = new Payment[100];
+    // this should be implemented with another type of structure. for now, take a very big number (bad for memory)
+    offers[] = new Offer[100];
+  }
+
+  public static float getAmountOfOffer(Offer f){
+    if( f.getType() == Offer.DISCOUNT)
+      return f.getAmount();
+    return 0;
   }
 
   /**
   * Description: function to sellVIdeogame
   * Requires: Long Id (Videogame Id on File)
   */
-  public boolean sellVideogame(long id){
+  public boolean sellVideogame(long id, Offer offer){
     for( int i = 0; i < inventory.length ; i++){
       if( inventory[i].getId() == id){
           int s = inventory[i].getStock();
@@ -22,6 +38,14 @@ public class VideogameStore{
           s -= 1;
           inventory[i].setStock(s);
           // addPayment database
+          if( offer != null){
+              payments[lastPayment] = OfferPayment(inventory[i], "date",
+                                              inventory[i].getPrice() - VideogameStore.getAmountOfOffer()
+                                              offer)
+          }else{
+            payments[lastPayment] = Payment(inventory[i], "date",inventory[i].getPrice());
+          }
+
           return true;
       }
     }
@@ -71,6 +95,16 @@ public class VideogameStore{
 
           for(int i = 0; i < inventory.length ;i++){
             printer.println( inventory[i] );
+          }
+          printer.close();
+
+          file = new FileWriter(salesFile , true);
+          printer = new PrintWriter(file, true);
+
+
+          while( payments[lastPaymentPrinted] != null && lastPaymentPrinted < payments.length ){
+              printer.println( payments[lastPaymentPrinted++] );
+
           }
           printer.close();
 
