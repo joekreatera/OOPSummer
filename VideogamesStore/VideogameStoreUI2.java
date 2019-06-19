@@ -54,7 +54,7 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
       myList = new JList(store.getInventory());
       offerListModel = new DefaultListModel();
       orderList  = new JList( offerListModel );
-      offerList = new JList();
+      offerList = new JList( store.getOffers()  );
       totalSummaryLabel = new JLabel("Summary");
       mainPanel.add(leftPanel);
       mainPanel.add(rightPanel);

@@ -16,7 +16,30 @@ public class VideogameStore{
     payments = new Payment[100];
     // this should be implemented with another type of structure. for now, take a very big number (bad for memory)
     offers = new Offer[100];
+
+    offers[0] = new Offer(Offer.DISCOUNT, "DESC. 50%");
+    offers[1] = new Offer(Offer.DISCOUNT, "DESC. 40%");
+    offers[2] = new Offer(Offer.DISCOUNT, "DESC. 30%");
+    offers[3] = new Offer(Offer.DISCOUNT, "DESC. 20%");
+    offers[4] = new Offer(Offer.DISCOUNT, "DESC. 10%");
+    offers[5] = new Offer(Offer.FREEBIE, "Gorra");
+    offers[6] = new Offer(Offer.FREEBIE, "Figura");
+    offers[7] = new Offer(Offer.FREEBIE, "Sombrero");
+
   }
+
+  public java.util.Vector getOffers(){
+    int i = 0;
+    java.util.Vector<Offer> outVector = new java.util.Vector();
+    Offer offer = offers[0];
+    while(offer != null){
+      i++;
+      offer = offers[i];
+      outVector.add(offer);
+    }
+    return outVector;
+  }
+
   public Videogame[] getInventory(){
       return inventory;
   }
@@ -105,7 +128,7 @@ public class VideogameStore{
           for(int i = 0; i < inventory.length ;i++){
             printer.println( inventory[i] );
           }
-        
+
           printer.close();
 
           file = new FileWriter(salesFile , true);
