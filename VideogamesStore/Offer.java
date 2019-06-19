@@ -13,6 +13,6 @@ public class Offer{
 
   @Override
   public String toString(){
-      return "Offer " + getType;
+      return "Offer " + getType();
   }
 }

@@ -5,7 +5,7 @@ public class VideogameStore{
   Payment[] payments;
   Offer[] offers;
   String dataFile = "_default.vg";
-  String salesFile = "_sales.vg"
+  String salesFile = "_sales.vg";
   int lastPayment = 0;
   int lastPaymentPrinted = 0;
   public VideogameStore(String dataFile,String salesFile){
@@ -13,17 +13,24 @@ public class VideogameStore{
     this.dataFile = dataFile;
     this.salesFile = salesFile;
     // this should be implemented with another type of structure. for now, take a very big number (bad for memory)
-    payments[] = new Payment[100];
+    payments = new Payment[100];
     // this should be implemented with another type of structure. for now, take a very big number (bad for memory)
-    offers[] = new Offer[100];
+    offers = new Offer[100];
+  }
+  public Videogame[] getInventory(){
+      return inventory;
   }
 
   public static float getAmountOfOffer(Offer f){
     if( f.getType() == Offer.DISCOUNT)
-      return f.getAmount();
+      return ((DiscountOffer)f).getAmount();
     return 0;
   }
 
+
+  public boolean sellVideogame(long id){
+    return sellVideogame(id, null);
+  }
   /**
   * Description: function to sellVIdeogame
   * Requires: Long Id (Videogame Id on File)
@@ -38,6 +45,7 @@ public class VideogameStore{
           s -= 1;
           inventory[i].setStock(s);
           // addPayment database
+          /*
           if( offer != null){
               payments[lastPayment] = OfferPayment(inventory[i], "date",
                                               inventory[i].getPrice() - VideogameStore.getAmountOfOffer()
@@ -45,7 +53,7 @@ public class VideogameStore{
           }else{
             payments[lastPayment] = Payment(inventory[i], "date",inventory[i].getPrice());
           }
-
+          */
           return true;
       }
     }
@@ -101,11 +109,11 @@ public class VideogameStore{
           file = new FileWriter(salesFile , true);
           printer = new PrintWriter(file, true);
 
-
+          /*
           while( payments[lastPaymentPrinted] != null && lastPaymentPrinted < payments.length ){
               printer.println( payments[lastPaymentPrinted++] );
 
-          }
+          }*/
           printer.close();
 
       }catch(IOException ioe){

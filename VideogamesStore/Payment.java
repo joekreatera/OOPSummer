@@ -1,8 +1,8 @@
 public class Payment{
 
-  private String date;
-  private float amount;
-  private Videogame videogame;
+  protected String date;
+  protected float amount;
+  protected Videogame videogame;
 
   public Payment(Videogame vg, String d, float a){
     date = d;

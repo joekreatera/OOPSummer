@@ -4,14 +4,20 @@ import java.awt.event.*;
 
 public class VideogameStoreUI2 extends JFrame implements ActionListener{
 
-  JList myList ;
+  JList<Videogame> myList ;
+  VideogameStore store;
 
   public VideogameStoreUI2(String title){
       super(title);
+
+      store = new VideogameStore("db.vg","sales.vg");
+      store.loadDatabase();
+      //store.saveDatabase();
+
       JPanel mainPanel = new JPanel();
       mainPanel.setLayout(new GridLayout(2,1) );
-      String[] options = {"VJ1","VJ2","VJ3","VJ4"};
-      myList = new JList(options);
+    
+      myList = new JList(store.getInventory());
       mainPanel.add(myList);
       JButton button = new JButton("Click");
       button.addActionListener(this);

@@ -4,7 +4,7 @@ public class VideogameStoreUI{
   VideogameStore store;
 
   public VideogameStoreUI(){
-    store = new VideogameStore("db.vg");
+    store = new VideogameStore("db.vg","sales.vg");
     store.loadDatabase();
     store.saveDatabase();
   }
