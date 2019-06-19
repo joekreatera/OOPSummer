@@ -8,8 +8,28 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
   JList<Offer> offerList;
   JLabel totalSummaryLabel;
   VideogameStore store;
+  DefaultListModel<Videogame> offerListModel;
+
   public VideogameStoreUI2(String title){
-      super(title);
+    super(title);
+
+    String uis[] = {
+    "com.sun.java.swing.plaf.windows.WindowsLookAndFeel",
+    "com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel",
+    "javax.swing.plaf.metal.MetalLookAndFeel",
+    "javax.swing.plaf.nimbus.NimbusLookAndFeel",
+    "com.sun.java.swing.plaf.motif.MotifLookAndFeel"
+  };
+
+    try{
+      UIManager.setLookAndFeel(uis[2]);
+    }catch(Exception cnfe){
+      System.out.println("Exception " + cnfe);
+    }
+
+
+
+
       store = new VideogameStore("db.vg","sales.vg");
       store.loadDatabase();
       //store.saveDatabase();
@@ -32,8 +52,9 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
       button.addActionListener(this);
 
       myList = new JList(store.getInventory());
-      orderList  = new JList(store.getInventory());
-      offerList = new JList(store.getInventory());
+      offerListModel = new DefaultListModel();
+      orderList  = new JList( offerListModel );
+      offerList = new JList();
       totalSummaryLabel = new JLabel("Summary");
       mainPanel.add(leftPanel);
       mainPanel.add(rightPanel);
@@ -56,12 +77,10 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
   public void actionPerformed(ActionEvent evt){
 
       ListModel<Videogame> model = myList.getModel();
-      Videogame vg = model.getElementAt( myList.getSelectedIndex() );
-      System.out.println("Videogame: " +  vg );
-      vg.setPrice(1.0f);
-      System.out.println("Videogame: " +  vg );
-
-      myList.updateUI();
+      Videogame vg = model.getElementAt( myList.getSelectedIndex());
+      vg.setStock( vg.getStock() - 1);
+      offerListModel.addElement(vg);
+      orderList.updateUI();
   }
   public static void main(String args[]){
     new VideogameStoreUI2("Videogame Store 2");
