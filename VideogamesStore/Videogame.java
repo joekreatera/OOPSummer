@@ -6,6 +6,8 @@ public class Videogame{
   String rating;
   int stock;
   private long id;
+
+  public static boolean FILE_EDITION = false;
   public Videogame(String data){
       StringTokenizer tokens = new StringTokenizer(data,",");
       int dataNum = 0;
@@ -32,6 +34,14 @@ public class Videogame{
   public void setStock(int p){ stock = p;}
   @Override
   public String toString(){
+      //Fifa 2000, M, 1200.00,4
+      if( Videogame.FILE_EDITION){
+        return toFileString();
+      }
+      return id+")"+name +":" + price + "(" + stock +")";
+  }
+
+  public String toFileString(){
       //Fifa 2000, M, 1200.00,4
     return id+","+name + "," + rating + ","+ price + "," + stock;
   }

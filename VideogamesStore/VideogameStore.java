@@ -101,9 +101,11 @@ public class VideogameStore{
           FileWriter file = new FileWriter(dataFile);
           PrintWriter printer = new PrintWriter(file, true);
 
+
           for(int i = 0; i < inventory.length ;i++){
             printer.println( inventory[i] );
           }
+        
           printer.close();
 
           file = new FileWriter(salesFile , true);
