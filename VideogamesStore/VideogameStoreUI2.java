@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
-
+import java.util.*;
 public class VideogameStoreUI2 extends JFrame
   implements ActionListener, ListSelectionListener{
   JList<Videogame> myList ;
@@ -13,9 +13,12 @@ public class VideogameStoreUI2 extends JFrame
   DefaultListModel<Videogame> offerListModel;
   Videogame selectedVideogame;
 
+  Vector<Payment> payments;
+
   public VideogameStoreUI2(String title){
     super(title);
 
+    payments = new Vector();
     String uis[] = {
     "com.sun.java.swing.plaf.windows.WindowsLookAndFeel",
     "com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel",
@@ -79,31 +82,41 @@ public class VideogameStoreUI2 extends JFrame
       setVisible(true);
   }
 
+  public void UpdateTotalLabel(){
+
+    
+  }
+
   public void valueChanged(ListSelectionEvent listEvent){
 
     if( listEvent.getSource() == orderList ){
       if( !listEvent.getValueIsAdjusting() ){
         int sel = orderList.getSelectedIndex();
-        selectedVideogame = (orderList.getModel()).getElementAt(sel);
+        if( sel > -1)
+          selectedVideogame = (orderList.getModel()).getElementAt(sel);
       }
     }
     if( listEvent.getSource() == offerList){
       if( !listEvent.getValueIsAdjusting() ){
         int sel = offerList.getSelectedIndex() ;
-        Offer thisOffer = offerList.getModel().getElementAt(sel);
-        if( selectedVideogame != null){
-          Payment p = new OfferPayment(
-            selectedVideogame,
-            "Fecha de hoy",
-            selectedVideogame.getPrice(),
-            thisOffer
-          );
-          selectedVideogame = null;
-          orderList.clearSelection();
-          offerList.clearSelection();
-        }else{
-          JOptionPane.showMessageDialog(null, "Selecciona un juego!");
-          offerList.clearSelection();
+
+        if( sel > -1){
+          Offer thisOffer = offerList.getModel().getElementAt(sel);
+          if( selectedVideogame != null){
+            Payment p = new OfferPayment(
+              selectedVideogame,
+              "Fecha de hoy",
+              selectedVideogame.getPrice(),
+              thisOffer
+            );
+            payments.add(p);
+            selectedVideogame = null;
+            orderList.clearSelection();
+            offerList.clearSelection();
+          }else{
+            JOptionPane.showMessageDialog(null, "Selecciona un juego!");
+            offerList.clearSelection();
+          }
         }
       }
     }
