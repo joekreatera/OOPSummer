@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.event.*;
 
-public class VideogameStoreUI2 extends JFrame implements ActionListener{
+public class VideogameStoreUI2 extends JFrame
+  implements ActionListener, ListSelectionListener{
   JList<Videogame> myList ;
   JList<Videogame> orderList;
   JList<Offer> offerList;
@@ -55,6 +57,7 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
       offerListModel = new DefaultListModel();
       orderList  = new JList( offerListModel );
       offerList = new JList( store.getOffers()  );
+      offerList.addListSelectionListener(this);
       totalSummaryLabel = new JLabel("Summary");
       mainPanel.add(leftPanel);
       mainPanel.add(rightPanel);
@@ -72,6 +75,18 @@ public class VideogameStoreUI2 extends JFrame implements ActionListener{
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setSize(800,600);
       setVisible(true);
+  }
+
+  public void valueChanged(ListSelectionEvent listEvent){
+
+    if( !listEvent.getValueIsAdjusting() ){
+      int sel = ( ((JList)listEvent.getSource()).getSelectedIndex() );
+      ListModel<Offer> offers = offerList.getModel();
+      Offer thisOffer = offers.getElementAt(sel);
+      System.out.println(thisOffer);
+      System.out.println(listEvent);
+    }
+
   }
 
   public void actionPerformed(ActionEvent evt){
