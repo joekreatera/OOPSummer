@@ -116,17 +116,17 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 - Must have at least one "BACKUP" function that outputs every piece of information to Files.
 
 ### Grade (Value: 200 points)
--[ ] Idea accepted (10)
--[ ] Tool's Clear utility (20)
--[ ] More than 12 classes (20)
--[ ] CRUD operations for entities (40)
--[ ] File Writing (10)
--[ ] File Reading (10)
--[ ] Backup from everything (30)
--[ ] Start from scratch (15)
--[ ] Use of all interface elements (15)
--[ ] Use of menus for operations (15)
--[ ] Client (15)
+- [ ] Idea accepted (10)
+- [ ] Tool's Clear utility (20)
+- [ ] More than 12 classes (20)
+- [ ] CRUD operations for entities (40)
+- [ ] File Writing (10)
+- [ ] File Reading (10)
+- [ ] Backup from everything (30)
+- [ ] Start from scratch (15)
+- [ ] Use of all interface elements (15)
+- [ ] Use of menus for operations (15)
+- [ ] Client (15)
 ### Extras
--[ ] Great User interface including icons and images (20)
--[ ] Sockets and web views
+- [ ] Great User interface including icons and images (20)
+- [ ] Sockets and web views
