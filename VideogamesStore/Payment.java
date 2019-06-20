@@ -3,6 +3,7 @@ public class Payment{
   protected String date;
   protected float amount;
   protected Videogame videogame;
+  
 
   public Payment(Videogame vg, String d, float a){
     date = d;

@@ -18,10 +18,15 @@ public class VideogameStore{
     offers = new Offer[100];
 
     offers[0] = new Offer(Offer.DISCOUNT, "DESC. 50%");
+    offers[0].setOfferAmount(0.5f);
     offers[1] = new Offer(Offer.DISCOUNT, "DESC. 40%");
+    offers[1].setOfferAmount(0.4f);
     offers[2] = new Offer(Offer.DISCOUNT, "DESC. 30%");
+    offers[2].setOfferAmount(0.3f);
     offers[3] = new Offer(Offer.DISCOUNT, "DESC. 20%");
+    offers[3].setOfferAmount(0.2f);
     offers[4] = new Offer(Offer.DISCOUNT, "DESC. 10%");
+    offers[4].setOfferAmount(0.1f);
     offers[5] = new Offer(Offer.FREEBIE, "Gorra");
     offers[6] = new Offer(Offer.FREEBIE, "Figura");
     offers[7] = new Offer(Offer.FREEBIE, "Sombrero");

@@ -11,6 +11,7 @@ public class VideogameStoreUI2 extends JFrame
   JLabel totalSummaryLabel;
   VideogameStore store;
   DefaultListModel<Videogame> offerListModel;
+  Videogame selectedVideogame;
 
   public VideogameStoreUI2(String title){
     super(title);
@@ -56,6 +57,7 @@ public class VideogameStoreUI2 extends JFrame
       myList = new JList(store.getInventory());
       offerListModel = new DefaultListModel();
       orderList  = new JList( offerListModel );
+      orderList.addListSelectionListener(this);
       offerList = new JList( store.getOffers()  );
       offerList.addListSelectionListener(this);
       totalSummaryLabel = new JLabel("Summary");
@@ -79,12 +81,31 @@ public class VideogameStoreUI2 extends JFrame
 
   public void valueChanged(ListSelectionEvent listEvent){
 
-    if( !listEvent.getValueIsAdjusting() ){
-      int sel = ( ((JList)listEvent.getSource()).getSelectedIndex() );
-      ListModel<Offer> offers = offerList.getModel();
-      Offer thisOffer = offers.getElementAt(sel);
-      System.out.println(thisOffer);
-      System.out.println(listEvent);
+    if( listEvent.getSource() == orderList ){
+      if( !listEvent.getValueIsAdjusting() ){
+        int sel = orderList.getSelectedIndex();
+        selectedVideogame = (orderList.getModel()).getElementAt(sel);
+      }
+    }
+    if( listEvent.getSource() == offerList){
+      if( !listEvent.getValueIsAdjusting() ){
+        int sel = offerList.getSelectedIndex() ;
+        Offer thisOffer = offerList.getModel().getElementAt(sel);
+        if( selectedVideogame != null){
+          Payment p = new OfferPayment(
+            selectedVideogame,
+            "Fecha de hoy",
+            selectedVideogame.getPrice(),
+            thisOffer
+          );
+          selectedVideogame = null;
+          orderList.clearSelection();
+          offerList.clearSelection();
+        }else{
+          JOptionPane.showMessageDialog(null, "Selecciona un juego!");
+          offerList.clearSelection();
+        }
+      }
     }
 
   }
