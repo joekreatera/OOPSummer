@@ -93,3 +93,40 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 [UI2: creation](../../tree/master/JInterfaceReference/WindowMaker.java)
 
 [UI3: auxiliary Canvas](../../tree/master/JInterfaceReference/MyCanvas.java)
+
+
+## Final Project
+### Conceptual requirements
+
+- Must be a full program that really has a utility
+- Should be done for a client (could be parents, friends, business)
+- Could have images (not needed)
+- Must be able to start from scratch
+- The concept should be accepted by teacher prior to **Wednesday june 26**
+
+
+### Technical requirements
+
+- Includes a UI done in Java with panels, windows, texfields, buttons, lists, and two components that haven't been seen before in class
+- Must have Menus
+- Must read files and write files (at least two)
+- Must have at least 12 classes divided in packages
+- When starting, it should check if files are in place. If they are not, create some default.
+- For the different entities, there should be CRUD operations (create, retrieve, update, delete). IE: if there is a Videogame Entity, there should be a place to add new videogames, update their properties and delete them for good.
+- Must have at least one "BACKUP" function that outputs every piece of information to Files.
+
+### Grade (Value: 200 points)
+-[] Idea accepted (10)
+-[] Tool's Clear utility (20)
+-[] More than 12 classes (20)
+-[] CRUD operations for entities (40)
+-[] File Writing (10)
+-[] File Reading (10)
+-[] Backup from everything (30)
+-[] Start from scratch (15)
+-[] Use of all interface elements (15)
+-[] Use of menus for operations (15)
+-[] Client (15)
+### Extras
+-[] Great User interface including icons and images (20)
+-[] Sockets and web views
