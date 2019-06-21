@@ -133,6 +133,6 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 
 # Practical Exam
 
-Download from here [SEASON DATA](https://www.geeksforgeeks.org/signals-c-language/)
+Download from here [SEASON DATA](https://datahub.io/sports-data/english-premier-league)
 
-Remember the selection of the table. 
+Remember the selection of the table.
