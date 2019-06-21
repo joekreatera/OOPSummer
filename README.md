@@ -130,3 +130,9 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 ### Extras
 - [ ] Great User interface including icons and images (20)
 - [ ] Sockets and web views
+
+# Practical Exam
+
+Download from here [SEASON DATA](https://www.geeksforgeeks.org/signals-c-language/)
+
+Remember the selection of the table. 
