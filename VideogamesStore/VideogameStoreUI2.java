@@ -3,12 +3,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
 import java.util.*;
+
+import java.text.*;
 public class VideogameStoreUI2 extends JFrame
   implements ActionListener, ListSelectionListener{
   JList<Videogame> myList ;
   JList<Videogame> orderList;
   JList<Offer> offerList;
   JLabel totalSummaryLabel;
+  JLabel totalAmountLabel;
   VideogameStore store;
   DefaultListModel<Videogame> offerListModel;
   Videogame selectedVideogame;
@@ -49,10 +52,10 @@ public class VideogameStoreUI2 extends JFrame
       rightPanel.setLayout(new GridLayout(2,1) );
 
       JPanel rightTopPanel = new JPanel();
-      rightTopPanel.setLayout(new GridLayout(2,1) );
+      rightTopPanel.setLayout(new GridLayout(1,2) );
 
       JPanel rightBottomPanel = new JPanel();
-      rightTopPanel.setLayout(new GridLayout(1,1) );
+      rightBottomPanel.setLayout(new GridLayout(2,1) );
 
       JButton button = new JButton("Click");
       button.addActionListener(this);
@@ -64,6 +67,7 @@ public class VideogameStoreUI2 extends JFrame
       offerList = new JList( store.getOffers()  );
       offerList.addListSelectionListener(this);
       totalSummaryLabel = new JLabel("Summary");
+      totalAmountLabel = new JLabel("0.0");
       mainPanel.add(leftPanel);
       mainPanel.add(rightPanel);
       leftPanel.add(myList);
@@ -73,7 +77,7 @@ public class VideogameStoreUI2 extends JFrame
       rightTopPanel.add(orderList);
       rightTopPanel.add(offerList);
       rightBottomPanel.add(totalSummaryLabel);
-
+      rightBottomPanel.add(totalAmountLabel);
 
 
       getContentPane().add(mainPanel);
@@ -82,9 +86,19 @@ public class VideogameStoreUI2 extends JFrame
       setVisible(true);
   }
 
-  public void UpdateTotalLabel(){
-
-    
+  public void updateTotalLabel(){
+    String result = "";
+    float finalPriceTotal = 0;
+    for(int i=0; i< payments.size(); i++){
+        Payment p = payments.get(i);
+        OfferPayment po = (OfferPayment)p;
+        float amount = po.getOffer().getOfferAmount();
+        float finalPrice = p.getVideogame().getPrice()*(1-amount);
+        finalPriceTotal += finalPrice;
+        result += "<br/>"+ p.getVideogame().getName() + " | " + finalPrice + "<br/>" + po.getOffer().getDescription() ;
+    }
+    totalAmountLabel.setText("$" + finalPriceTotal);
+    totalSummaryLabel.setText("<html>"+result+"</html>");
   }
 
   public void valueChanged(ListSelectionEvent listEvent){
@@ -105,7 +119,7 @@ public class VideogameStoreUI2 extends JFrame
           if( selectedVideogame != null){
             Payment p = new OfferPayment(
               selectedVideogame,
-              "Fecha de hoy",
+              "" + DateFormat.getDateInstance(DateFormat.SHORT, Locale.US).format(new Date()),
               selectedVideogame.getPrice(),
               thisOffer
             );
@@ -113,6 +127,7 @@ public class VideogameStoreUI2 extends JFrame
             selectedVideogame = null;
             orderList.clearSelection();
             offerList.clearSelection();
+            updateTotalLabel();
           }else{
             JOptionPane.showMessageDialog(null, "Selecciona un juego!");
             offerList.clearSelection();
