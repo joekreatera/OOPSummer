@@ -16,11 +16,11 @@ ITESM Summer Object Oriented Programming Course
 - [x] User and password look up in file to access :calendar:
 - [ ] Videogame Store extension with Offers and Payments :bomb:
 - [x] Sim City calculating pollution and population :bomb:
-- [ ] Calculator with trigonometric function :calendar:
-- [ ] Robot update from interface with images :calendar:
+- [x] Calculator with trigonometric function :calendar:
+- [x] Robot update from interface with images :calendar:
 - [ ] System process execution with java :calendar:
-- [ ] TBD :bomb:
-- [ ] TBD :bomb:
+- [ ] User Interface for Spaceship Program :bomb:
+- [ ] User Interface for Premier League Analyzer :bomb:
 - [ ] Brute force password list :calendar:
 - [ ] Free fall physics simulation :calendar:
 - [ ] SFX Browser Navigation :calendar:
@@ -136,3 +136,14 @@ Listeners reference [External link](https://www.tutorialspoint.com/swing/swing_e
 Download from here [SEASON DATA](https://datahub.io/sports-data/english-premier-league)
 
 Remember the selection of the table.
+
+## Update 23-06-2019
+# Google maps on swing controller
+
+Generate an interface between buttons on Java and a WebNavigation Component. This has to be done with a texfield to set the original place, and the textfield to set the destination. The button will send this to the javascript in the page, that will call the google code to show the route.
+Add a Reset button.
+
+# Chat system
+
+Generate a chat system in which, using sockets, a communication between two computers is possible. The interface must have a lobby in which a user inputs a username. When the user has already finished, it will connect to the room, the interface will show at least three components: a text area (to show the messages), a textfield (to input the messages) and a button to send the messages.
+Remember that the solution comprises of at least two CLASS files, the server and the UI client.

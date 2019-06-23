@@ -14,7 +14,7 @@ public class Calculator implements ActionListener{
     JPanel panelZero = new JPanel();
     panelZero.setLayout(new GridLayout(3,1));
     JPanel panelOne = new JPanel();
-    panelOne.setLayout(new GridLayout(5,3));
+    panelOne.setLayout(new GridLayout(6,3));
     myField = new JTextField();
 
     panelZero.add(myField);
@@ -43,6 +43,8 @@ public class Calculator implements ActionListener{
     op = new JButton("*"); op.addActionListener(this);
     panel.add(op);
     op = new JButton("/"); op.addActionListener(this);
+    panel.add(op);
+    op = new JButton("sin"); op.addActionListener(this);
     panel.add(op);
   }
 
@@ -98,6 +100,27 @@ public class Calculator implements ActionListener{
         }
 
       }
+      if( button.getText().equals("*")){
+        System.out.println("This is * ");
+        if( operands == 0){
+          operands++;
+          operation = 2;
+          operand1 = Float.parseFloat(prevText);
+          myField.setText("");
+        }
+
+      }
+
+      if( button.getText().equals("sin")){
+        System.out.println("This is sin ");
+        if( operands == 0){
+          operands = 2;
+          operand1 = (float)Math.sin(Float.parseFloat(prevText)/180*Math.PI);
+          myField.setText("" + operand1);
+          operand1 = 0;
+        }
+
+      }
 
       if( button.getText().equals("=")){
         if(  operands == 1){
@@ -106,7 +129,13 @@ public class Calculator implements ActionListener{
             float result = operand1 + Float.parseFloat(prevText);
             myField.setText(""+result);
           }
-
+        }
+        if(  operands == 1){
+          operands++;
+          if( operation == 2){
+            float result = operand1 * Float.parseFloat(prevText);
+            myField.setText(""+result);
+          }
         }
 
       }
