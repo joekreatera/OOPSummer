@@ -134,7 +134,7 @@ public class Robot{
         attackStr += attacks[i] + "\n";
       }
     }
-    return "Robot ("+posX+","+posY+" : "+speedX+","+speedY+") with "+damage+"/"+maxDamagePossible + "\n" + defenseStr + "\n" + attackStr;
+    return "Robot ("+posX+","+posY+" : "+speedX+","+speedY+") with "+damage+"/"+maxDamagePossible+")"; // + "\n" + defenseStr + "\n" + attackStr;
   }
 
 }

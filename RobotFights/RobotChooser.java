@@ -38,8 +38,8 @@ public class RobotChooser extends JInternalFrame{
     topRobot.setModel(topRobotModel);
     bottomRobot.setModel(bottomRobotModel);
 
-    topImage = new ImageIcon();
-    bottomImage = new ImageIcon();
+    topImage = new ImageIcon("images/robot0.png");
+    bottomImage = new ImageIcon("images/robot0.png");
     topImageLabel = new JLabel(topImage);
     bottomImageLabel = new JLabel(bottomImage);
 

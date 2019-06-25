@@ -1,15 +1,15 @@
-public class J03 extends Robot{
+public class M4N0N extends Robot{
 
-  public J03(int ox, int oy){
-      super(ox,oy,100,4,3);
-      this.setAttackSlots(4);
-      this.setDefenseSlots(2);
+  public M4N0N(int ox, int oy){
+      super(ox,oy,180,2,2);
+      this.setAttackSlots(3);
+      this.setDefenseSlots(3);
       this.addAttack( new FireWeapon(10) );
       this.addAttack( new ElectricalWeapon(5) );
       this.addAttack( new FireWeapon(20) );
-      this.addAttack( new ClashWeapon(3) );
+      this.addDefense( new FireDefense(13) );
       this.addDefense(new ElectricalDefense(9));
-      this.addDefense(new ClashDefense(4));
+      this.addDefense(new ClashDefense(6));
   }
   @Override
   public String toString(){
@@ -24,7 +24,7 @@ public class J03 extends Robot{
       robot+="   / / | \\ \\\n";
       robot+="  <_________>\n";
 
-      return  "J03)"+ super.toString() ;
+      return  "M4N0N)"+ super.toString() ;
   }
 
 }
