@@ -38,6 +38,9 @@ public class RobotChooser extends JInternalFrame{
     topRobot.setModel(topRobotModel);
     bottomRobot.setModel(bottomRobotModel);
 
+    addRobots(topRobotModel);
+    addRobots(bottomRobotModel);
+
     topImage = new ImageIcon("images/robot0.png");
     bottomImage = new ImageIcon("images/robot0.png");
     topImageLabel = new JLabel(topImage);
@@ -55,5 +58,12 @@ public class RobotChooser extends JInternalFrame{
     this.add(mainPanel);
     this.setSize(400,400);
     this.setVisible(true);
+  }
+
+  public void addRobots(DefaultListModel<Robot> model){
+      model.addElement( new J03(0,0) );
+      model.addElement( new CH4CH0(0,0) );
+      model.addElement( new AB3L4RD0(0,0) );
+      model.addElement( new M4N0N(0,0) );
   }
 }
