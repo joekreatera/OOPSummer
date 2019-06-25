@@ -6,6 +6,9 @@ public class Robot{
   private int speedX;
   private int speedY;
 
+  private String image;
+
+
   private Weapon[] attacks;
   private Defense[] defenses;
 
@@ -27,6 +30,13 @@ public class Robot{
     damage = 0;
   }
 
+
+  public String getImage(){
+    return image;
+  }
+  public void setImage(String str){
+    image= str;
+  }
   public boolean isAvailable(){
     return damage < maxDamagePossible;
   }

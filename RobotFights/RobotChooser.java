@@ -1,8 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-
-public class RobotChooser extends JInternalFrame{
+import javax.swing.event.*;
+public class RobotChooser extends JInternalFrame implements ListSelectionListener{
 
   JList<Robot> topRobot;
   JList<Robot> bottomRobot;
@@ -16,7 +16,7 @@ public class RobotChooser extends JInternalFrame{
   DefaultListModel bottomRobotModel;
 
   public RobotChooser(){
-    super("Chooser" , false,true,true,true);
+    super("Chooser" , true,true,true,true);
     JPanel mainPanel =new JPanel();
     mainPanel.setLayout(new GridLayout(4,1));
     JPanel topSelectionPanel = new JPanel();
@@ -58,12 +58,39 @@ public class RobotChooser extends JInternalFrame{
     this.add(mainPanel);
     this.setSize(400,400);
     this.setVisible(true);
+
+    topRobot.addListSelectionListener(this);
+    bottomRobot.addListSelectionListener(this);
+  }
+
+  public void valueChanged(ListSelectionEvent evt){
+    JList<Robot> list = (JList<Robot>)evt.getSource();
+    boolean changing = list.getValueIsAdjusting();
+    if( !changing ){
+      Robot selectedRobot = (Robot)topRobotModel.getElementAt(list.getSelectedIndex());
+      String img = selectedRobot.getImage();
+      if( list == topRobot)
+        topImageLabel.setIcon( new ImageIcon(img) );
+      if(list == bottomRobot)
+        bottomImageLabel.setIcon( new ImageIcon(img) );
+    }
   }
 
   public void addRobots(DefaultListModel<Robot> model){
-      model.addElement( new J03(0,0) );
-      model.addElement( new CH4CH0(0,0) );
-      model.addElement( new AB3L4RD0(0,0) );
-      model.addElement( new M4N0N(0,0) );
+      Robot myInstance = new J03(0,0);
+      myInstance.setImage("images/robot1.png");
+      model.addElement( myInstance);
+
+       myInstance = new CH4CH0(0,0) ;
+      myInstance.setImage("images/robot2.png");
+      model.addElement( myInstance);
+
+       myInstance = new AB3L4RD0(0,0);
+      myInstance.setImage("images/robot3.png");
+      model.addElement( myInstance);
+
+       myInstance = new M4N0N(0,0);
+      myInstance.setImage("images/robot4.png");
+      model.addElement( myInstance);
   }
 }
