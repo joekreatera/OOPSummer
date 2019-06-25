@@ -12,7 +12,7 @@ public class WindowShow extends JFrame implements ActionListener{
 
   public WindowShow(){
     super("All window and menu");
-
+    changeUIHandler();
     JDesktopPane desktop = new JDesktopPane();
 
     JMenuBar menu = new JMenuBar();
@@ -74,6 +74,22 @@ public class WindowShow extends JFrame implements ActionListener{
     menu.add( new JMenuItem("C") );
     menu.add( new JMenuItem("D") );
     return menu;
+  }
+
+  public void changeUIHandler(){
+    String[] uis = {"com.sun.java.swing.plaf.windows.WindowsLookAndFeel",
+      "com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel",
+     "javax.swing.plaf.metal.MetalLookAndFeel",
+     "javax.swing.plaf.nimbus.NimbusLookAndFeel",
+     "com.sun.java.swing.plaf.motif.MotifLookAndFeel"
+   };
+
+    try{
+      UIManager.setLookAndFeel(uis[3]);
+    }catch(Exception cnfe){
+      System.out.println("Exception " + cnfe);
+    }
+
   }
   public static void main(String args[]){
     new WindowShow();

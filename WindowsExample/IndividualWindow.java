@@ -10,7 +10,7 @@ public class IndividualWindow extends JInternalFrame implements ActionListener, 
   DefaultListModel<String> listModel;
   public IndividualWindow(boolean size, boolean close, boolean maximize, boolean minimize){
     super("Individual Window", size, close, maximize, minimize);
-    this.nextWindow = nextWindow;
+    
     JPanel  mainPanel = new JPanel();
     mainPanel.setLayout( new GridLayout(2,1) );
     internalList = new JList<String>();
