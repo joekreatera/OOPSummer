@@ -69,10 +69,13 @@ public class RobotChooser extends JInternalFrame implements ListSelectionListene
     if( !changing ){
       Robot selectedRobot = (Robot)topRobotModel.getElementAt(list.getSelectedIndex());
       String img = selectedRobot.getImage();
+      ImageIcon icon = RobotUITools.getResizedImageIcon(
+                                      new ImageIcon(img), 100,100
+                                    );
       if( list == topRobot)
-        topImageLabel.setIcon( new ImageIcon(img) );
+        topImageLabel.setIcon( icon );
       if(list == bottomRobot)
-        bottomImageLabel.setIcon( new ImageIcon(img) );
+        bottomImageLabel.setIcon( icon );
     }
   }
 
