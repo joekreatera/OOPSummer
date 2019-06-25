@@ -8,6 +8,8 @@ public class RobotGrapher extends JFrame{
     super("Robot Grapher");
     JDesktopPane desktop = new JDesktopPane();
     this.add(desktop);
+    desktop.add(new RobotChooser());
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setSize(900,600);
     this.setVisible(true);
   }
