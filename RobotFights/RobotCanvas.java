@@ -18,12 +18,13 @@ public class RobotCanvas extends Canvas{
   }
 
   public void nextFrame(){
-    event.fight();
-    repaint();
+
   }
 
   public void paint(Graphics g){
     g.drawRect( r1.getPosX(),r1.getPosY(),10,10);
     g.drawRect( r2.getPosX(),r2.getPosY(),10,10);
+    event.fight();
+    repaint();
   }
 }
