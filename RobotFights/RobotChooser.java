@@ -29,6 +29,7 @@ public class RobotChooser extends JInternalFrame implements ActionListener,ListS
     JPanel goButtonPanel = new JPanel();
     goButtonPanel.setLayout(new GridLayout(1,1));
     JButton goButton = new JButton("Go");
+    goButton.addActionListener(this);
     goButtonPanel.add(goButton);
 
     topRobotModel = new DefaultListModel();
@@ -64,9 +65,9 @@ public class RobotChooser extends JInternalFrame implements ActionListener,ListS
   }
 
   public void actionPerformed(ActionEvent evt){
-    Robot r1 = topRobotModel.getElementAt(topRobot.getSelectedIndex());
-    Robot r2 = bottomRobotModel.getElementAt(bottomRobot.getSelectedIndex());
-    RobotGraper.getMainWindow().showGraphWindow(r1,r2);
+    Robot r1 = (Robot)topRobotModel.getElementAt(topRobot.getSelectedIndex());
+    Robot r2 = (Robot)bottomRobotModel.getElementAt(bottomRobot.getSelectedIndex());
+    RobotGrapher.getMainWindow().showGraphWindow(r1,r2);
   }
 
   public void valueChanged(ListSelectionEvent evt){

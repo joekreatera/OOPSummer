@@ -15,7 +15,8 @@ public class RobotGraphWindow extends JInternalFrame implements ActionListener{
     this.getContentPane().add(c);
     doNextFrameBtn = new JButton("Next frame");
     doNextFrameBtn.addActionListener(this);
-    this.getGlassPane().add(doNextFrameBtn);
+    ((JPanel)this.getGlassPane()).add(doNextFrameBtn);
+    ((JPanel)this.getGlassPane()).setVisible(true);
     this.repaint();
     this.setVisible(true);
   }

@@ -6,21 +6,18 @@ public class RobotGrapher extends JFrame{
 
   RobotGraphWindow grapher;
   private static RobotGrapher mainWindow;
-  public static RobotGraper getMainWindow(){
-    return mainWindow;
-  }
+  JDesktopPane desktop;
+  public static RobotGrapher getMainWindow(){ return mainWindow; }
   public RobotGrapher(){
     super("Robot Grapher");
     changeUIHandler();
-    JDesktopPane desktop = new JDesktopPane();
+    desktop = new JDesktopPane();
     this.add(desktop);
     desktop.add(new RobotChooser());
-    //grapher = new RobotGraphWindow();
-    //desktop.add(grapher);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setSize(900,600);
     this.setVisible(true);
-    RobotGraper.mainWindow = this;
+    RobotGrapher.mainWindow = this;
   }
   public void showGraphWindow(Robot r1, Robot r2){
     grapher = new RobotGraphWindow(r1,r2);

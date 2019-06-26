@@ -30,6 +30,9 @@ public class Robot{
     damage = 0;
   }
 
+  public void reSpawn(){
+    damage = 0;
+  }
 
   public String getImage(){
     return image;
