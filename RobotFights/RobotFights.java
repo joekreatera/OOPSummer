@@ -45,7 +45,7 @@ class RobotFights{
                     noop // retake fight
 
       */
-      while(robotContender.isAvailable() && robotChampion.isAvailable()){
+      if(robotContender.isAvailable() && robotChampion.isAvailable()){
           if( getDistance(robotContender,robotChampion) > DISTANCE_TO_ATTACK ){
             robotChampion.moveTowards(robotContender);
             robotContender.moveTowards(robotChampion);

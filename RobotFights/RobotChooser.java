@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
-public class RobotChooser extends JInternalFrame implements ListSelectionListener{
+public class RobotChooser extends JInternalFrame implements ActionListener,ListSelectionListener{
 
   JList<Robot> topRobot;
   JList<Robot> bottomRobot;
@@ -61,6 +61,12 @@ public class RobotChooser extends JInternalFrame implements ListSelectionListene
 
     topRobot.addListSelectionListener(this);
     bottomRobot.addListSelectionListener(this);
+  }
+
+  public void actionPerformed(ActionEvent evt){
+    Robot r1 = topRobotModel.getElementAt(topRobot.getSelectedIndex());
+    Robot r2 = bottomRobotModel.getElementAt(bottomRobot.getSelectedIndex());
+    RobotGraper.getMainWindow().showGraphWindow(r1,r2);
   }
 
   public void valueChanged(ListSelectionEvent evt){
