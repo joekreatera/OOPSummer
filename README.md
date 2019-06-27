@@ -14,11 +14,11 @@ ITESM Summer Object Oriented Programming Course
 - [x] UML Robots :calendar:
 - [x] Robot specification to File :calendar:
 - [x] User and password look up in file to access :calendar:
-- [ ] Videogame Store extension with Offers and Payments :bomb:
+- [x] Videogame Store extension with Offers and Payments (solved with example of UI) :bomb:
 - [x] Sim City calculating pollution and population :bomb:
 - [x] Calculator with trigonometric function :calendar:
 - [x] Robot update from interface with images :calendar:
-- [ ] System process execution with java :calendar:
+- [x] System process execution with java :calendar:
 - [ ] User Interface for Spaceship Program :bomb:
 - [ ] User Interface for Premier League Analyzer :bomb:
 - [ ] Brute force password list :calendar:
