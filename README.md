@@ -24,8 +24,6 @@ ITESM Summer Object Oriented Programming Course
 - [ ] Brute force password list :calendar:
 - [ ] Free fall physics simulation :calendar:
 - [ ] SFX Browser Navigation :calendar:
-- [ ] TBD :bomb:
-- [ ] TBD :bomb:
 #### Special challenges (they will count more than what was specified on day 1)
 - [ ] Battle for the middle earth :moneybag:
 - [ ] Google maps handler on swing interface :moneybag:
@@ -147,3 +145,7 @@ Add a Reset button.
 
 Generate a chat system in which, using sockets, a communication between two computers is possible. The interface must have a lobby in which a user inputs a username. When the user has already finished, it will connect to the room, the interface will show at least three components: a text area (to show the messages), a textfield (to input the messages) and a button to send the messages.
 Remember that the solution comprises of at least two CLASS files, the server and the UI client.
+
+# Grades and points
+
+[Here!](https://docs.google.com/spreadsheets/d/e/2PACX-1vQE-_cyEVsr8sa4ykecYCGyzWZvSHIiK3zvt766gUvZ6dp50Yia-l74Xn7I5NwpE4jkXGyGwbYRmZQJ/pubhtml?gid=0&single=true)
